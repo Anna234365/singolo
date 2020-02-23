@@ -8,13 +8,16 @@ font-family: "Lato";
     width: 1020px;
     margin: auto;
     box-sizing: border-box;
-    padding: 0 40px;
+    padding: 0 40px 0 42px;
 }
 
 h1 {
     height: 1px;
     width: 1px;
     color: #2d3a34;
+    position: absolute;
+    font-size: 5px;
+    line-height: 50px;
 }
 
 .header {
@@ -28,7 +31,7 @@ h1 {
 .logo {
     font-size: 24px;
     color: #ffffff;
-    font-weight: 700;  
+    font-weight: 700;
 }
 
 .colored {
@@ -38,7 +41,6 @@ h1 {
 .navigation {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     height: 21px;
 }
 
@@ -47,7 +49,6 @@ nav {
 }
 
 .bullet {
-    flex-basis: 1;
     padding: 0 12.5px;
     color: #788ee49c;
     font-weight: 700;
@@ -97,7 +98,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 0px;
+    padding-bottom: 5px;
     
 }
 
@@ -109,6 +110,7 @@ a {
 .services {
     height: 495px;
     background-color: #f2f2f2;
+    padding-top: 2px;
 }
 
 .our_services {
@@ -121,7 +123,7 @@ h2 {
     color: #666d89;
     font-weight: 900;
     text-align: left;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.2px;
 }
 
 .our_services_text {
@@ -131,13 +133,13 @@ h2 {
     color: #767e9e;
     font-weight: 300;
     text-align: left;
-    padding: 27px 0 45px 0;
+    padding: 27px 0 46px 0;
 }
 
 .services_description {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px; 
+    margin-bottom: 26px; 
 }
 
 .services_item {
@@ -151,7 +153,7 @@ h2 {
 }
 
 .service_type {
-    flex-basis: 222px; 
+    flex-basis: 220px; 
 }
 
 .service_title {
