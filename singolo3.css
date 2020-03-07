@@ -12,7 +12,7 @@
 
 .quote {
     background-color: #f06c64;
-    padding: 68px 40px 26px 40px;
+    padding: 68px 40px 17px 40px;
 }
 
 .quote__title {
@@ -35,7 +35,6 @@
 
 .forms {
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-between;
 }
 
@@ -52,7 +51,9 @@
     line-height: 36.5px;
     margin-bottom: 16px;
     font-size: 12px;
-    
+    text-indent: 14px;
+    color: #f0d8d9;
+    outline: none;
 }
 
 .input_area {
@@ -66,7 +67,10 @@
     height: 195px;
     resize: none;
     width: 618px;
-    padding-top: 6px;  
+    padding-top: 6px;
+    text-indent: 14px;
+    color: #f0d8d9;  
+    outline: none;
     
 }
 
@@ -75,6 +79,7 @@
     color: #f48c8f;
     font-weight: 400;
     text-indent: 14px;
+    font-size: 12px;
 }
 
 .input_area::placeholder {
@@ -82,10 +87,23 @@
     color: #f48c8f;
     font-weight: 400;
     text-indent: 14px;
+    font-size: 12px;
 }
 
 .input__button {
     width: 80px;
+    height: 30px;
+    border: 1px solid #f48c8f;
+    background-color: #d6564f; 
+    border-radius: 5px;
+    color: #f0d8d9;
+    
+}
+
+.input__button:hover {
+    cursor: pointer;
+    border: 2px solid #f0d8d9;
+    font-weight: 900;
 }
 
 .contacts {
@@ -110,12 +128,11 @@
     font-weight: 400;
     text-align: justify;
     padding-bottom: 16px;
-    letter-spacing: -0.25px; 
+    letter-spacing: -0.012px;
+    word-wrap: break-word; 
 }
 
-.contacts__channels {
-    /* display: flex; */
-}
+
 
 .contacts__channel {
     display: flex;
