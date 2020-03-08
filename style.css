@@ -395,6 +395,8 @@ li:before {
     line-height: 1.8rem;
     color: #f0d8d9;
     font-family: "Lato-900";
+    letter-spacing: -0.2px;
+    text-indent: 1px;
 }
     
 .quote__text {
