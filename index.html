@@ -6,28 +6,43 @@
         <title>SINGOLO</title>
     </head>
     <body>
-        <header class="header">      <!-- HEADER -->
-            <div class="logo"><img src="assets/logo_singolo.png" alt="logo"></div>
+        <!-- <div id="MESSAGE_BLOCK" class="display_none"></div> -->
+              <!-- HEADER -->
+        <header class="header">      
             <h1>Anna234365</h1>
+            <div class="logo"><img src="assets/logo_singolo.png" alt="logo"></div>
             <nav class="navigation"> 
-                <ul class="navigation__list">
-                    <li><a href="#" class="navigation__item">HOME</a></li>
-                    <li><a href="#" class="navigation__item">SERVICES</a></li>
-                    <li><a href="#" class="navigation__item">PORTFOLIO</a></li>
-                    <li><a href="#" class="navigation__item">ABOUT</a></li>
-                    <li><a href="#" class="navigation__item">CONTACT</a></li>
+                <ul class="navigation__list" id="MENU">
+                    <li><a href="#HOME" class="navigation__item active">HOME</a></li>
+                    <li><a href="#SERVICES" class="navigation__item">SERVICES</a></li>
+                    <li><a href="#PORTFOLIO" class="navigation__item">PORTFOLIO</a></li>
+                    <li><a href="#ABOUT" class="navigation__item">ABOUT</a></li>
+                    <li><a href="#CONTACT" class="navigation__item">CONTACT</a></li>
                 </ul>
             </nav>
         </header>
-        <div class="slider">  <!-- SLIDER -->
+        
+        <!-- SLIDER -->
+
+        <div class="slider" id="HOME"> 
             <div class="chev"><img src="assets/chev.png" alt="slider_left"></div>
             <div class="phones">
-                <div class="phone_vertical_screen"></div>
-                <div class="phone_horizontal_screen"></div>
+                
+                <div id="PHONE_VERTICAL_WRAPPER">
+                    <div id="PHONE_VERTICAL_SCREEN"></div>
+                </div>
+                
+                <div id="PHONE_HORIZONTAL_WRAPPER">
+                    <div id="PHONE_HORIZONTAL_SCREEN"></div>
+                </div>
+
             </div>
             <div class="chev chev_right"><img src="assets/chev.png" alt="slider_right" ></div>
         </div>
-        <div class="services"> <!-- SERVICES -->
+
+        <!-- SERVICES -->
+
+        <div class="services" id="SERVICES"> 
             <div class="services__header">Our Services</div>
             <div class="services__introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. 
                 Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
@@ -83,32 +98,32 @@
                 </div>          
             </div>
         </div>
-        <div class="portfolio"> <!-- PORTFOLIO-->
+        <div class="portfolio" id="PORTFOLIO"> <!-- PORTFOLIO-->
             <div class="protfolio__title">Portfolio</div>
             <div class="portfolio__text"><span>Duis mollis, est non commodo luctus, 
                 nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span></div>
-            <form class="portfolio__navigation">
-                <button class="portfolio__button">All</button>
-                <button class="portfolio__button">Web Design</button>
-                <button class="portfolio__button">Graphic Design</button>
-                <button class="portfolio__button">Artwork</button>
+            <form class="portfolio__navigation" id="PORTFOLIO_NAVIGATION">
+                <button type="button" class="portfolio__button">All</button>
+                <button type="button" class="portfolio__button">Web&nbsp;Design</button>
+                <button type="button" class="portfolio__button">Graphic&nbsp;Design</button>
+                <button type="button" class="portfolio__button">Artwork</button>
             </form>
-            <div class="portfolio__images">
-                <img class="portfolio__image" src="./assets/portfolio/image1.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image2.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image3.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image4.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image5.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image6.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image7.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image8.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image9.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image10.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image11.png" alt="image">
-                <img class="portfolio__image" src="./assets/portfolio/image12.png" alt="image">
+            <div class="portfolio__images" id="PORTFOLIO_IMAGES">
+                <img class="portfolio__image Artwork" src="./assets/portfolio/image1.png" alt="image">
+                <img class="portfolio__image Graphic&nbsp;Design" src="./assets/portfolio/image2.png" alt="image">
+                <img class="portfolio__image Web&nbsp;Design Artwork Graphic&nbsp;Design" src="./assets/portfolio/image3.png" alt="image">
+                <img class="portfolio__image Graphic&nbsp;Design" src="./assets/portfolio/image4.png" alt="image">
+                <img class="portfolio__image Artwork" src="./assets/portfolio/image5.png" alt="image">
+                <img class="portfolio__image Graphic&nbsp;Design" src="./assets/portfolio/image6.png" alt="image">
+                <img class="portfolio__image Artwork Web&nbsp;Design" src="./assets/portfolio/image7.png" alt="image">
+                <img class="portfolio__image Artwork" src="./assets/portfolio/image8.png" alt="image">
+                <img class="portfolio__image Web&nbsp;Design" src="./assets/portfolio/image9.png" alt="image">
+                <img class="portfolio__image Artwork" src="./assets/portfolio/image10.png" alt="image">
+                <img class="portfolio__image Artwork Graphic&nbsp;Design" src="./assets/portfolio/image11.png" alt="image">
+                <img class="portfolio__image Web&nbsp;Design" src="./assets/portfolio/image12.png" alt="image">
             </div>
         </div>
-        <div class="about-us">
+        <div class="about-us" id="ABOUT">
             <div class="about-us__title">
                 About Us
             </div>
@@ -157,6 +172,8 @@
             </div>
         </div>
         <div class="quote"> <!-- QUOTE-->
+                       
+
             <div class="quote__title">
                 Get a Quote
             </div>
@@ -165,14 +182,28 @@
                 Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
                 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
             </div>
+            <!-- <div id="CONTACT"></div> -->
             <div class="inputs-and-contacts">
-                <form class="inputs">
+                
+                <form class="inputs" id="CONTACT">
                     <input class="input__row" type="text" maxlength="50" required placeholder="Name (Required)">
                     <input class="input__row" type="email" maxlength="50" required placeholder="Email (Required)">
-                    <input class="input__row" type="text" maxlength="50" placeholder="Subject">
-                    <textarea class="input__textarea" maxlength="1000" placeholder="Describe your project in detail..." rows="10"></textarea>
-                    <input class="input__button" type="submit" value="Submit">
+                    <input id="MESSAGE_SUBJECT" class="input__row" type="text" maxlength="50" placeholder="Subject" >
+                    <textarea id="MESSAGE_DESCRIPTION" class="input__textarea" maxlength="1000" placeholder="Describe your project in detail..." rows="10"></textarea>
+                    <input id="INPUT_BUTTON" type="button" value="Submit">
                 </form>
+                
+                <div id="MESSAGE_BLOCK" class="display_none"></div>
+                    <div id="MESSAGE" class="message_sent display_none">
+                        <p class="message_sent">Письмо отправлено</p>
+                        <p class="message_sent" id="MESSAGE_SENT_SUBJECT"></p>
+                        <p class="message_sent" id="MESSAGE_SENT_DESCRIPTION"></p>
+                        <button id="MESSAGE_BUTTON" type="button">OK</button>
+                    </div>
+                 
+
+
+
             <div class="contacts">
                 <div class="contacts__title">
                     Contact Information
@@ -210,6 +241,10 @@
                     <div class="footer__contacts_ico"><img src="./assets/contacts_ico/linkedin.png" alt="facebook"></div>
                 </div>
         </footer>
+        
+
+    
+        <script src="script.js"></script>
     </body>
 </html>
     
