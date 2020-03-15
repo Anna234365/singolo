@@ -107,7 +107,8 @@ li:before {
 /* SLIDER WITH MOBILE PHONES */
 
 .slider {
-    background-color: #f06c64;
+    /* background-color: #f06c64; */
+    background-color: #64f087;
     height: 695px;
     border-bottom: 6px solid #ea676b;
     padding: 95px 40px 0 42px;
