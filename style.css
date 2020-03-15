@@ -291,6 +291,7 @@ li:before {
     font-family: "Lato-400";
     background-color: #2d303a;
     margin-right: 7.5px;
+    outline: none;
 }
     
 .portfolio__button:first-child {

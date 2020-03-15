@@ -21,10 +21,18 @@ const MESSAGE_SENT_SUBJECT = document.getElementById('MESSAGE_SENT_SUBJECT');
 const MESSAGE_SENT_DESCRIPTION = document.getElementById('MESSAGE_SENT_DESCRIPTION');
 
 PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
+    PORTFOLIO_NAVIGATION.querySelectorAll('button').forEach (el => el.classList.remove('active'));
+    PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
     if(event.target.classList.contains('portfolio__button')) {
+        event.target.classList.add('active')
         let array = PORTFOLIO_IMAGES.querySelectorAll('img');    
         PORTFOLIO_IMAGES.appendChild(array[0]);
     }
+})
+
+PORTFOLIO_IMAGES.addEventListener('click', (event) => {
+    PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
+    event.target.classList.add('active');
 })
 
 MENU.addEventListener('click', (event) => {
@@ -44,10 +52,7 @@ PHONE_HORIZONTAL_WRAPPER.addEventListener('click', () => {
     PHONE_HORIZONTAL_SCREEN.classList.add('display_none');
 })
 
-PORTFOLIO_IMAGES.addEventListener('click', (event) => {
-    PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
-    event.target.classList.add('active');
-})
+
 
 INPUT_BUTTON.addEventListener('click', () => {    
     let subject = MESSAGE_SUBJECT.value;
@@ -68,3 +73,5 @@ MESSAGE_BUTTON.addEventListener('click', () => {
     MESSAGE.classList.add('display_none');
     
 })
+
+
