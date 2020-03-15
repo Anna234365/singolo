@@ -22,6 +22,12 @@ const MESSAGE_SENT_DESCRIPTION = document.getElementById('MESSAGE_SENT_DESCRIPTI
 
 let array = [1,2,3,4,5,6,7,8,9,10,11,12];
 
+PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
+    let array = PORTFOLIO_IMAGES.querySelectorAll('img');    
+    PORTFOLIO_IMAGES.appendChild(array[0]);
+})
+
+
 MENU.addEventListener('click', (event) => {
     MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
     event.target.classList.add('active');
@@ -41,27 +47,16 @@ PHONE_HORIZONTAL_WRAPPER.addEventListener('click', () => {
 
 // PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
 //     if(event.target.classList.contains('portfolio__button')) {
+//         PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
 //         PORTFOLIO_NAVIGATION.querySelectorAll('.portfolio__button').forEach(el => el.classList.remove('active'));
 //         event.target.classList.add('active');
-//         let tag = event.target.innerText;
-//         PORTFOLIO_IMAGES.querySelectorAll('img').forEach(el => tag === 'All' ? 
-//         el.classList.remove('display_none') : el.classList.contains(tag) && tag != 'All' ? 
-//         el.classList.remove('display_none') : el.classList.add('display_none'))   
+//         let shuffle = (Math.floor(Math.random() * 11 ) + array[0]) %12;
+//         array = array.map((element, index) =>  element = (shuffle + index)%12+1);
+//         PORTFOLIO_IMAGES.querySelectorAll('img').forEach((el, index) => {
+//             el.src = './assets/portfolio/image' + array[index] + '.png'
+//         })
 //     }
 // })
-
-PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
-    if(event.target.classList.contains('portfolio__button')) {
-        PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
-        PORTFOLIO_NAVIGATION.querySelectorAll('.portfolio__button').forEach(el => el.classList.remove('active'));
-        event.target.classList.add('active');
-        let shuffle = (Math.floor(Math.random() * 11 ) + array[0]) %12;
-        array = array.map((element, index) =>  element = (shuffle + index)%12+1);
-        PORTFOLIO_IMAGES.querySelectorAll('img').forEach((el, index) => {
-            el.src = './assets/portfolio/image' + array[index] + '.png'
-        })
-    }
-})
 
 PORTFOLIO_IMAGES.addEventListener('click', (event) => {
     PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
