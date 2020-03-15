@@ -575,15 +575,17 @@ li:before {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 300px;
-    height: 200px;
+    min-width: 300px;
+    max-width: 400px;
+    min-height: 200px;
+    max-height: 500px;
     /* position: relative; */
     /* top: 85%;
     left: 30%; */
-    background-color: #f48c8f;
-    border: 3px solid #d6564f;
+    background-color: #f2f2f2;
+    border: 3px solid #2d303a;
     border-radius: 5px;
-    color: #d6564f;
+    /* color: #d6564f; */
 
     position: absolute;
     /* top: 0; */
@@ -591,21 +593,45 @@ li:before {
     z-index: 16;
 }
 
-.message_sent {
+.message_sent_title {
+    font-family: "Cuprum";
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 10px 0;
+    color: #2d303a; 
+}
+
+.message_sent_subject {
     margin: 5px 0;
-    color: #d6564f;
-    /* font-family: "Sans Serif"; */
-    font-size: 1.8rem;
+    color: #2d303a;
+    font-size: 1.5rem;
+    padding: 0 10px;
+}
+
+.message_sent_description {
+    margin: 5px 0;
+    color: #2d303a;
+    font-size: 1.5rem;
+    padding: 0 10px;
+    max-height: 200px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message_sent_button {
+     padding: 10px 0;
 }
 
 #MESSAGE_BUTTON {
     width: 40px;
     height: 30px;
-    border: 1px solid #d6564f;
+    border: 1px solid #2d303a;
     border-radius: 2px;
-    color: #d6564f;
+    color: #2d303a;
     font-family: "Lato-700";
     font-size: 1.2rem;
+   
 }
 #MESSAGE_BUTTON:hover {
    cursor: pointer;

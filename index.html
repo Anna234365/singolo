@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Cuprum:700&display=swap&subset=cyrillic" rel="stylesheet">
         <meta charset="UTF-8">
         <title>SINGOLO</title>
     </head>
@@ -194,11 +195,11 @@
                 </form>
                 
                 <div id="MESSAGE_BLOCK" class="display_none"></div>
-                    <div id="MESSAGE" class="message_sent display_none">
-                        <p class="message_sent">Письмо отправлено</p>
-                        <p class="message_sent" id="MESSAGE_SENT_SUBJECT"></p>
-                        <p class="message_sent" id="MESSAGE_SENT_DESCRIPTION"></p>
-                        <button id="MESSAGE_BUTTON" type="button">OK</button>
+                    <div id="MESSAGE" class="display_none">
+                        <div class="message_sent_title"><p >Письмо отправлено</p></div>
+                        <div class="message_sent_subject"><p id="MESSAGE_SENT_SUBJECT"></p></div>
+                        <div class="message_sent_description"><p class="message_sent_description" id="MESSAGE_SENT_DESCRIPTION"></p></div>
+                        <div class="message_sent_button"><button id="MESSAGE_BUTTON" type="button">OK</button></div>
                     </div>
                  
 
