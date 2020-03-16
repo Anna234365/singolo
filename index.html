@@ -7,8 +7,9 @@
         <title>SINGOLO</title>
     </head>
     <body>
-        <!-- <div id="MESSAGE_BLOCK" class="display_none"></div> -->
-              <!-- HEADER -->
+              
+<!-- HEADER -->
+
         <header class="header">      
             <h1>Anna234365</h1>
             <div class="logo"><img src="assets/logo_singolo.png" alt="logo"></div>
@@ -23,27 +24,35 @@
             </nav>
         </header>
         
-        <!-- SLIDER -->
-
-        <div class="slider" id="HOME"> 
-            <div class="chev"><img src="assets/chev.png" alt="slider_left"></div>
-            <div class="phones">
-                
-                <div id="PHONE_VERTICAL_WRAPPER">
-                    <div id="PHONE_VERTICAL_SCREEN"></div>
+<!-- SLIDER -->
+        
+        <div class="carousel_container" id="HOME">
+            <div class="carousel_slide">
+                <div class="slide_2 carousel_img" id="LAST_CLONE"><img src="assets/slide-2.png"></div>
+                <div class="slide_1 carousel_img">      
+                    <div class="phones">
+                        <div id="PHONE_VERTICAL_WRAPPER"><div id="PHONE_VERTICAL_SCREEN"></div></div>
+                        <div id="PHONE_HORIZONTAL_WRAPPER"><div id="PHONE_HORIZONTAL_SCREEN"></div></div> 
+                    </div>
                 </div>
-                
-                <div id="PHONE_HORIZONTAL_WRAPPER">
-                    <div id="PHONE_HORIZONTAL_SCREEN"></div>
+                <div class="slide_2 carousel_img"><img src="assets/slide-2.png"></div>
+                <div class="slide_1 carousel_img" id="FIRST_CLONE"> 
+                    <div class="phones">
+                        <div id="PHONE_VERTICAL_WRAPPER"><div id="PHONE_VERTICAL_SCREEN"></div></div>
+                        <div id="PHONE_HORIZONTAL_WRAPPER"><div id="PHONE_HORIZONTAL_SCREEN"></div></div>
+                    </div>
                 </div>
-
             </div>
-            <div class="chev chev_right"><img src="assets/chev.png" alt="slider_right" ></div>
         </div>
 
-        <!-- SERVICES -->
+        <div class="carousel_buttons" id="SERVICES">
+            <div class="chev prev_button"><img src="assets/chev.png" alt="slider_left"></div>     
+            <div class="chev next_button"><img src="assets/chev.png" alt="slider_right" ></div>
+        </div>
 
-        <div class="services" id="SERVICES"> 
+<!-- SERVICES -->
+
+        <div class="services">
             <div class="services__header">Our Services</div>
             <div class="services__introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. 
                 Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
@@ -99,7 +108,10 @@
                 </div>          
             </div>
         </div>
-        <div class="portfolio" id="PORTFOLIO"> <!-- PORTFOLIO-->
+        
+<!-- PORTFOLIO-->
+        
+        <div class="portfolio" id="PORTFOLIO"> 
             <div class="protfolio__title">Portfolio</div>
             <div class="portfolio__text"><span>Duis mollis, est non commodo luctus, 
                 nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span></div>
@@ -133,7 +145,10 @@
                 Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
                 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
             </div>
-            <div class="employees"> <!-- EMPLOYEES-->
+            
+<!-- EMPLOYEES-->
+
+            <div class="employees"> 
                 <div class="employee">
                     <img class="employee__image" src="./assets/employees/employee1.png" alt="employee1">
                     <div class="employee__name">Adam Jensen</div>
@@ -172,28 +187,30 @@
                 </div>
             </div>
         </div>
-        <div class="quote"> <!-- QUOTE-->
-                       
-
-            <div class="quote__title">
-                Get a Quote
-            </div>
+        
+<!-- QUOTE-->
+        
+        <div class="quote">     
+            <div class="quote__title">Get a Quote</div>
             <div class="quote__text">
                 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. 
                 Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
                 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
             </div>
-            <!-- <div id="CONTACT"></div> -->
+           
+            <!-- INPUT FORM -->
+            
             <div class="inputs-and-contacts">
-                
-                <form class="inputs" id="CONTACT">
-                    <input class="input__row" type="text" maxlength="50" required placeholder="Name (Required)">
-                    <input class="input__row" type="email" maxlength="50" required placeholder="Email (Required)">
+                <form class="inputs" id="FORM">
+                    <input id="NAME" class="input__row" type="text" maxlength="50" required placeholder="Name (Required)">
+                    <input id="MAIL" class="input__row" type="email" maxlength="50" required placeholder="Email (Required)">
                     <input id="MESSAGE_SUBJECT" class="input__row" type="text" maxlength="50" placeholder="Subject" >
                     <textarea id="MESSAGE_DESCRIPTION" class="input__textarea" maxlength="1000" placeholder="Describe your project in detail..." rows="10"></textarea>
-                    <input id="INPUT_BUTTON" type="button" value="Submit">
+                    <input id="INPUT_BUTTON" type="submit" value="Submit">
                 </form>
-                
+            
+            <!-- MESSAGE_BLOCK -->
+            
                 <div id="MESSAGE_BLOCK" class="display_none"></div>
                     <div id="MESSAGE" class="display_none">
                         <div class="message_sent_title"><p >Письмо отправлено</p></div>
@@ -201,11 +218,10 @@
                         <div class="message_sent_description"><p class="message_sent_description" id="MESSAGE_SENT_DESCRIPTION"></p></div>
                         <div class="message_sent_button"><button id="MESSAGE_BUTTON" type="button">OK</button></div>
                     </div>
-                 
+            
+            <!-- CONTACTS -->
 
-
-
-            <div class="contacts">
+            <div class="contacts" id="CONTACT">
                 <div class="contacts__title">
                     Contact Information
                 </div>
@@ -231,6 +247,9 @@
             </div>
             </div>
         </div>
+        
+        <!-- FOOTER -->
+        
         <footer class="footer">
             <div class="footer__copyright">
                &copy; Copyright 2013
@@ -241,11 +260,9 @@
                     <div class="footer__contacts_ico"><img src="./assets/contacts_ico/twitter.png" alt="facebook"></div>
                     <div class="footer__contacts_ico"><img src="./assets/contacts_ico/linkedin.png" alt="facebook"></div>
                 </div>
-        </footer>
-        
-
-    
-        <script src="script.js"></script>
+        </footer>    
+        <script src="script.js"></script>      
+        <div id="MESSAGE_BLOCK" class="display_none"></div>
     </body>
 </html>
     
