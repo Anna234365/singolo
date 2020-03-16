@@ -78,6 +78,7 @@ FORM.addEventListener('submit', (event) => {
 MESSAGE_BUTTON.addEventListener('click', () => {
     MESSAGE_BLOCK.classList.add('display_none');
     MESSAGE.classList.add('display_none');
+    document.querySelector('html').style.overflow = 'auto';
     
 })
 
