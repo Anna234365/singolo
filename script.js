@@ -24,9 +24,9 @@ const MESSAGE_SENT_SUBJECT = document.getElementById('MESSAGE_SENT_SUBJECT');
 const MESSAGE_SENT_DESCRIPTION = document.getElementById('MESSAGE_SENT_DESCRIPTION');
 
 PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
-    PORTFOLIO_NAVIGATION.querySelectorAll('button').forEach (el => el.classList.remove('active'));
-    PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
     if(event.target.classList.contains('portfolio__button')) {
+        PORTFOLIO_NAVIGATION.querySelectorAll('button').forEach (el => el.classList.remove('active'));
+        PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
         event.target.classList.add('active')
         let array = PORTFOLIO_IMAGES.querySelectorAll('img');    
         PORTFOLIO_IMAGES.appendChild(array[0]);
@@ -40,8 +40,10 @@ PORTFOLIO_IMAGES.addEventListener('click', (event) => {
 })
 
 MENU.addEventListener('click', (event) => {
-    MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
+    if (event.target.classList.contains('navigation__item')) {
+        MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
+        event.target.classList.add('active');
+    }
 })
 
 PHONE_VERTICAL_WRAPPER.addEventListener('click', () => {
@@ -57,7 +59,8 @@ PHONE_HORIZONTAL_WRAPPER.addEventListener('click', () => {
 })
 
 FORM.addEventListener('submit', (event) => {    
-        
+        event.preventDefault();
+        document.querySelector('html').style.overflow = 'hidden';
         let subject = MESSAGE_SUBJECT.value;
         let description = MESSAGE_DESCRIPTION.value;
 
@@ -66,15 +69,10 @@ FORM.addEventListener('submit', (event) => {
 
         MESSAGE_BLOCK.style.height = document.getElementsByTagName('html').clientHeight;
         
-        subject == '' ? MESSAGE_SENT_SUBJECT.innerHTML = 'Без темы': MESSAGE_SENT_SUBJECT.innerHTML = 'Тема: ' + subject;
-        description == '' ? MESSAGE_SENT_DESCRIPTION.innerText = 'Без описания' : MESSAGE_SENT_DESCRIPTION.innerText = 'Описание: ' + description.slice(0,-(description.length-200));
+        subject == '' ? MESSAGE_SENT_SUBJECT.innerHTML = '<b> Без темы </b>': MESSAGE_SENT_SUBJECT.innerHTML = '<b> Тема: </b>' + subject;
+        description == '' ? MESSAGE_SENT_DESCRIPTION.innerHTML = '<b> Без описания </b>' : MESSAGE_SENT_DESCRIPTION.innerHTML = '<b> Описание: </b>' + description;
 
-        MESSAGE_SUBJECT.value = '';
-        MESSAGE_DESCRIPTION.value = '';
-        NAME.value = '';
-        MAIL.value = '';
-        
-        event.preventDefault();
+        FORM.reset();     
 })
 
 MESSAGE_BUTTON.addEventListener('click', () => {

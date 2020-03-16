@@ -202,22 +202,24 @@
             
             <div class="inputs-and-contacts">
                 <form class="inputs" id="FORM">
-                    <input id="NAME" class="input__row" type="text" maxlength="50" required placeholder="Name (Required)">
-                    <input id="MAIL" class="input__row" type="email" maxlength="50" required placeholder="Email (Required)">
-                    <input id="MESSAGE_SUBJECT" class="input__row" type="text" maxlength="50" placeholder="Subject" >
-                    <textarea id="MESSAGE_DESCRIPTION" class="input__textarea" maxlength="1000" placeholder="Describe your project in detail..." rows="10"></textarea>
+                    <input id="NAME" class="input__row" type="text" required placeholder="Name (Required)">
+                    <input id="MAIL" class="input__row" type="email" required placeholder="Email (Required)">
+                    <input id="MESSAGE_SUBJECT" class="input__row" type="text" placeholder="Subject" >
+                    <textarea id="MESSAGE_DESCRIPTION" class="input__textarea" placeholder="Describe your project in detail..." rows="10"></textarea>
                     <input id="INPUT_BUTTON" type="submit" value="Submit">
                 </form>
             
             <!-- MESSAGE_BLOCK -->
             
-                <div id="MESSAGE_BLOCK" class="display_none"></div>
+                <div id="MESSAGE_BLOCK" class="display_none">
                     <div id="MESSAGE" class="display_none">
                         <div class="message_sent_title"><p >Письмо отправлено</p></div>
                         <div class="message_sent_subject"><p id="MESSAGE_SENT_SUBJECT"></p></div>
-                        <div class="message_sent_description"><p class="message_sent_description" id="MESSAGE_SENT_DESCRIPTION"></p></div>
+                        <div class="message_sent_description"><p id="MESSAGE_SENT_DESCRIPTION"></p></div>
                         <div class="message_sent_button"><button id="MESSAGE_BUTTON" type="button">OK</button></div>
                     </div>
+                </div>
+                    
             
             <!-- CONTACTS -->
 

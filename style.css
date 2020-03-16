@@ -534,9 +534,8 @@ li:before {
     resize: none;
     color: #f1bec0;  
     outline: none;
-    overflow: hidden;
+    overflow: auto;
     padding: 5px 14px 12px 14px;
-
 }
     
 .input__row::placeholder {
@@ -589,6 +588,7 @@ li:before {
     left: 0;
     background-color: rgba(39, 30, 30, 0.7);
     z-index: 15;
+    display: flex;
 }
 
 #MESSAGE {
@@ -597,12 +597,12 @@ li:before {
     align-items: center;
     flex-direction: column;
     min-width: 300px;
-    max-width: 400px;
+    max-width: 600px;
     background-color: #f2f2f2;
     border: 3px solid #2d303a;
     border-radius: 5px;
-    position: absolute;
-    left: 30%;
+    position: relative;
+    margin: auto;
     z-index: 16;
 }
 
@@ -611,7 +611,16 @@ li:before {
     font-size: 2.5rem;
     font-weight: 700;
     padding: 10px 0;
-    color: #2d303a; 
+    color: #2d303a;
+    /* max-height: 100px; */
+    /* text-overflow: ellipsis;  */
+}
+
+#MESSAGE_SENT_SUBJECT {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+    max-height: 100px;
 }
 
 .message_sent_subject {
@@ -619,6 +628,17 @@ li:before {
     color: #2d303a;
     font-size: 1.5rem;
     padding: 0 10px;
+    max-height: 100px;
+    max-width: 500px;
+    text-overflow: ellipsis;
+}
+
+#MESSAGE_SENT_DESCRIPTION {
+   
+    text-overflow: ellipsis;
+    max-width: 500px;
+    max-height: 300px;
+    overflow: auto;
 }
 
 .message_sent_description {
@@ -626,9 +646,10 @@ li:before {
     color: #2d303a;
     font-size: 1.5rem;
     padding: 0 10px;
-    max-height: 200px;
+    max-height: 300px;
+    max-width: 500px;
     white-space: wrap;
-    overflow: hidden;
+    overflow: auto;
     text-overflow: ellipsis;
 }
 
