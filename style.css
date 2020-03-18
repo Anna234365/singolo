@@ -136,18 +136,18 @@ li:before {
 .prev_button {
     position: relative;
     width: 16px;
-    bottom: 318px;
+    bottom: 348px;
     z-index:2;
-    left: 43px;
+    left: 3px;
 }
 
 .next_button {
     position: relative;
     width: 16px;
     transform: scale(-1,1);
-    bottom: 319px;
+    bottom: 349px;
     z-index:2;
-    left: 949px;
+    left: 909px;
     display: block;
 }
 
@@ -168,13 +168,13 @@ li:before {
     flex-direction: row;
 }
 
-#PHONE_VERTICAL_WRAPPER {
+#phone_vertical_wrapper {
     width: 215px;
     height: 459px;
     border-radius: 30px;
 }
 
-#PHONE_VERTICAL_SCREEN {
+#phone_vertical_screen {
     width: 189px;
     height: 334px;
     background-image: url("./assets/phone_vertical_screen.svg");
@@ -184,7 +184,7 @@ li:before {
     background-position: 3.5% 54.5%;
 }
 
-#PHONE_HORIZONTAL_WRAPPER {
+#phone_horizontal_wrapper {
     width: 460px;
     height: 216px;
     border-radius: 30px;
@@ -192,7 +192,7 @@ li:before {
     margin-left: 97px;
 }
 
-#PHONE_HORIZONTAL_SCREEN {
+#phone_horizontal_screen {
     width: 333px;
     height: 189px;
     background-image: url("./assets/phone_horizontal_screen.svg");
@@ -206,7 +206,6 @@ li:before {
     height: 30px;
     background-color: #f2f2f2;
     display: flex;
-    scroll-margin: 95px;
 }
 
 /* SERVICES */
@@ -286,7 +285,7 @@ li:before {
 
 /* PORTFOLIO */
 
-.portfolio {
+#portfolio {
     scroll-margin-top: 95px;
     height: 869px;
     background-color: #2d303a;
@@ -308,7 +307,7 @@ li:before {
     padding: 22px 0 15px 0;
 }
 
-.portfolio__navigation {
+#portfolio__navigation {
     padding: 0 0 1px 1px;
 }
     
@@ -357,7 +356,7 @@ li:before {
     outline: none;
 }
     
-.portfolio__images {
+#portfolio__images {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -379,8 +378,8 @@ li:before {
 
 /* ABOUT US */
 
-.about-us {
-    scroll-margin-top: 95px;
+#about {
+    /* scroll-margin-top: 95px; */
     transition: 500ms;
     background-color: #f2f2f2;
     height: 734px;
@@ -563,7 +562,7 @@ li:before {
     color: #f48c8f;
 }
 
-#INPUT_BUTTON {
+.submit_button {
     width: 80px;
     height: 30px;
     border: 1px solid #f48c8f;
@@ -572,7 +571,7 @@ li:before {
     color: #d6564f;
 }
     
-#INPUT_BUTTON:hover {
+.submit_button:hover {
     cursor: pointer;
     border: 1px solid #f0d8d9;
     color: #f0d8d9;
@@ -580,7 +579,7 @@ li:before {
     transition-timing-function: ease-out;
 }
 
-#MESSAGE_BLOCK {
+#message_block {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -591,7 +590,7 @@ li:before {
     display: flex;
 }
 
-#MESSAGE {
+#message_sent {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -599,75 +598,54 @@ li:before {
     min-width: 300px;
     max-width: 600px;
     background-color: #f2f2f2;
-    border: 3px solid #2d303a;
+    border: 7px solid #2d303a;
     border-radius: 5px;
     position: relative;
     margin: auto;
     z-index: 16;
+    padding: 20px 20px;
 }
 
 .message_sent_title {
     font-family: "Cuprum";
     font-size: 2.5rem;
     font-weight: 700;
-    padding: 10px 0;
     color: #2d303a;
-    /* max-height: 100px; */
-    /* text-overflow: ellipsis;  */
 }
 
-#MESSAGE_SENT_SUBJECT {
+#message_sent_subject {
+    padding: 10px 0px;
+    color: #2d303a;
+    font-size: 1.5rem;
+    max-height: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 500px;
-    max-height: 100px;
+    max-width: calc(95%);
 }
 
-.message_sent_subject {
-    margin: 5px 0;
+#message_sent_description {
     color: #2d303a;
     font-size: 1.5rem;
-    padding: 0 10px;
-    max-height: 100px;
-    max-width: 500px;
-    text-overflow: ellipsis;
-}
-
-#MESSAGE_SENT_DESCRIPTION {
-   
-    text-overflow: ellipsis;
-    max-width: 500px;
     max-height: 300px;
-    overflow: auto;
-}
-
-.message_sent_description {
-    margin: 5px 0;
-    color: #2d303a;
-    font-size: 1.5rem;
-    padding: 0 10px;
-    max-height: 300px;
-    max-width: 500px;
     white-space: wrap;
-    overflow: auto;
+    overflow: hidden;
     text-overflow: ellipsis;
+    padding: 10px 0px;
+    max-width: calc(95%);
 }
 
-.message_sent_button {
-     padding: 10px 0;
-}
-
-#MESSAGE_BUTTON {
+#message_sent_button {
     width: 40px;
     height: 30px;
-    border: 1px solid #2d303a;
+    border: 2px solid #2d303a;
     border-radius: 2px;
     color: #2d303a;
-    font-family: "Lato-700";
-    font-size: 1.2rem;
-   
+    font-family: "Lato-900";
+    font-size: 1.4rem;
+    margin-bottom: calc(5%);
 }
-#MESSAGE_BUTTON:hover {
+
+#message_sent_button:hover {
    cursor: pointer;
 }
 

@@ -14,45 +14,47 @@
             <h1>Anna234365</h1>
             <div class="logo"><img src="assets/logo_singolo.png" alt="logo"></div>
             <nav class="navigation"> 
-                <ul class="navigation__list" id="MENU">
-                    <li><a href="#HOME" class="navigation__item active">HOME</a></li>
-                    <li><a href="#SERVICES" class="navigation__item">SERVICES</a></li>
-                    <li><a href="#PORTFOLIO" class="navigation__item">PORTFOLIO</a></li>
-                    <li><a href="#ABOUT" class="navigation__item">ABOUT</a></li>
-                    <li><a href="#CONTACT" class="navigation__item">CONTACT</a></li>
+                <ul class="navigation__list" id="menu">
+                    <li><a href="#home" class="navigation__item active">HOME</a></li>
+                    <li><a href="#services" class="navigation__item">SERVICES</a></li>
+                    <li><a href="#portfolio" class="navigation__item">PORTFOLIO</a></li>
+                    <li><a href="#about" class="navigation__item">ABOUT</a></li>
+                    <li><a href="#contact" class="navigation__item">CONTACT</a></li>
                 </ul>
             </nav>
         </header>
         
 <!-- SLIDER -->
         
-        <div class="carousel_container" id="HOME">
+        <div class="carousel_container" id="home">
             <div class="carousel_slide">
-                <div class="slide_2 carousel_img" id="LAST_CLONE"><img src="assets/slide-2.png"></div>
+                <div class="slide_2 carousel_img" id="last_clone"><img src="assets/slide-2.png"></div>
                 <div class="slide_1 carousel_img">      
                     <div class="phones">
-                        <div id="PHONE_VERTICAL_WRAPPER"><div id="PHONE_VERTICAL_SCREEN"></div></div>
-                        <div id="PHONE_HORIZONTAL_WRAPPER"><div id="PHONE_HORIZONTAL_SCREEN"></div></div> 
+                        <div id="phone_vertical_wrapper"><div id="phone_vertical_screen"></div></div>
+                        <div id="phone_horizontal_wrapper"><div id="phone_horizontal_screen"></div></div> 
                     </div>
                 </div>
                 <div class="slide_2 carousel_img"><img src="assets/slide-2.png"></div>
-                <div class="slide_1 carousel_img" id="FIRST_CLONE"> 
+                <div class="slide_1 carousel_img" id="first_clone"> 
                     <div class="phones">
-                        <div id="PHONE_VERTICAL_WRAPPER"><div id="PHONE_VERTICAL_SCREEN"></div></div>
-                        <div id="PHONE_HORIZONTAL_WRAPPER"><div id="PHONE_HORIZONTAL_SCREEN"></div></div>
+                        <div id="phone_vertical_wrapper"><div id="phone_vertical_screen"></div></div>
+                        <div id="phone_horizontal_wrapper"><div id="phone_horizontal_screen"></div></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="carousel_buttons" id="SERVICES">
-            <div class="chev prev_button"><img src="assets/chev.png" alt="slider_left"></div>     
-            <div class="chev next_button"><img src="assets/chev.png" alt="slider_right" ></div>
-        </div>
+        
 
 <!-- SERVICES -->
 
-        <div class="services">
+        <div class="services" id="services">
+            <div class="carousel_buttons" >
+                <div class="chev prev_button"><img src="assets/chev.png" alt="slider_left"></div>     
+                <div class="chev next_button"><img src="assets/chev.png" alt="slider_right" ></div>
+            </div>
+
             <div class="services__header">Our Services</div>
             <div class="services__introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. 
                 Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
@@ -111,17 +113,17 @@
         
 <!-- PORTFOLIO-->
         
-        <div class="portfolio" id="PORTFOLIO"> 
+        <div id="portfolio"> 
             <div class="protfolio__title">Portfolio</div>
             <div class="portfolio__text"><span>Duis mollis, est non commodo luctus, 
                 nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span></div>
-            <form class="portfolio__navigation" id="PORTFOLIO_NAVIGATION">
+            <form id="portfolio__navigation">
                 <button type="button" class="portfolio__button">All</button>
                 <button type="button" class="portfolio__button">Web&nbsp;Design</button>
                 <button type="button" class="portfolio__button">Graphic&nbsp;Design</button>
                 <button type="button" class="portfolio__button">Artwork</button>
             </form>
-            <div class="portfolio__images" id="PORTFOLIO_IMAGES">
+            <div id="portfolio__images">
                 <img class="portfolio__image" src="./assets/portfolio/image1.png" alt="image">
                 <img class="portfolio__image" src="./assets/portfolio/image2.png" alt="image">
                 <img class="portfolio__image" src="./assets/portfolio/image3.png" alt="image">
@@ -136,7 +138,10 @@
                 <img class="portfolio__image" src="./assets/portfolio/image12.png" alt="image">
             </div>
         </div>
-        <div class="about-us" id="ABOUT">
+
+<!-- ABOUT-->
+        
+        <div id="about">
             <div class="about-us__title">
                 About Us
             </div>
@@ -190,7 +195,7 @@
         
 <!-- QUOTE-->
         
-        <div class="quote">     
+        <div class="quote" id="contact">     
             <div class="quote__title">Get a Quote</div>
             <div class="quote__text">
                 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. 
@@ -201,29 +206,29 @@
             <!-- INPUT FORM -->
             
             <div class="inputs-and-contacts">
-                <form class="inputs" id="FORM">
-                    <input id="NAME" class="input__row" type="text" required placeholder="Name (Required)">
-                    <input id="MAIL" class="input__row" type="email" required placeholder="Email (Required)">
-                    <input id="MESSAGE_SUBJECT" class="input__row" type="text" placeholder="Subject" >
-                    <textarea id="MESSAGE_DESCRIPTION" class="input__textarea" placeholder="Describe your project in detail..." rows="10"></textarea>
-                    <input id="INPUT_BUTTON" type="submit" value="Submit">
+                <form class="inputs" id="form">
+                    <input class="input__row" type="text" required placeholder="Name (Required)">
+                    <input class="input__row" type="email" required placeholder="Email (Required)">
+                    <input id="message_subject" class="input__row" type="text" placeholder="Subject" >
+                    <textarea id="message_description" class="input__textarea" placeholder="Describe your project in detail..." rows="10"></textarea>
+                    <input class="submit_button" type="submit" value="Submit">
                 </form>
             
             <!-- MESSAGE_BLOCK -->
             
-                <div id="MESSAGE_BLOCK" class="display_none">
-                    <div id="MESSAGE" class="display_none">
-                        <div class="message_sent_title"><p >Письмо отправлено</p></div>
-                        <div class="message_sent_subject"><p id="MESSAGE_SENT_SUBJECT"></p></div>
-                        <div class="message_sent_description"><p id="MESSAGE_SENT_DESCRIPTION"></p></div>
-                        <div class="message_sent_button"><button id="MESSAGE_BUTTON" type="button">OK</button></div>
+                <div id="message_block" class="display_none">
+                    <div id="message_sent">
+                        <div class="message_sent_title">Письмо отправлено</div>
+                        <div id="message_sent_subject"></div>
+                        <div id="message_sent_description"></div>
+                        <button id="message_sent_button" type="button">OK</button>
                     </div>
                 </div>
                     
             
             <!-- CONTACTS -->
 
-            <div class="contacts" id="CONTACT">
+            <div class="contacts">
                 <div class="contacts__title">
                     Contact Information
                 </div>
@@ -264,7 +269,6 @@
                 </div>
         </footer>    
         <script src="script.js"></script>      
-        <div id="MESSAGE_BLOCK" class="display_none"></div>
     </body>
 </html>
     

@@ -1,83 +1,120 @@
-const MENU = document.getElementById('MENU');
+const menu = document.getElementById('menu');
+// phones
+const phoneVerticalWrapper = document.getElementById('phone_vertical_wrapper');
+const phoneVerticalScreen = document.getElementById('phone_vertical_screen');
+const phoneHorizontalWrapper = document.getElementById('phone_horizontal_wrapper');
+const phoneHorizontalScreen = document.getElementById('phone_horizontal_screen');
 
-const PHONE_VERTICAL_WRAPPER = document.getElementById('PHONE_VERTICAL_WRAPPER');
-const PHONE_VERTICAL_SCREEN = document.getElementById('PHONE_VERTICAL_SCREEN');
+// portfolio
+const portfolioNavigation = document.getElementById('portfolio__navigation');
+const portfolioImages = document.getElementById('portfolio__images');
 
-const PHONE_HORIZONTAL_WRAPPER = document.getElementById('PHONE_HORIZONTAL_WRAPPER');
-const PHONE_HORIZONTAL_SCREEN = document.getElementById('PHONE_HORIZONTAL_SCREEN');
+// form
+const form = document.getElementById('form');
 
-const PORTFOLIO = document.getElementById('PORTFOLIO');
-const PORTFOLIO_NAVIGATION = document.getElementById('PORTFOLIO_NAVIGATION');
-const PORTFOLIO_IMAGES = document.getElementById('PORTFOLIO_IMAGES');
+// modal window
+const messageBlock = document.getElementById('message_block');
+const messageSent = document.getElementById('message_sent');
+const messageSentButton = document.getElementById('message_sent_button');
 
-const NAME = document.getElementById('NAME');
-const MAIL = document.getElementById('MAIL');
-const FORM = document.getElementById('FORM');
-const INPUT_BUTTON = document.getElementById('INPUT_BUTTON');
-const MESSAGE_BLOCK = document.getElementById('MESSAGE_BLOCK');
-const MESSAGE = document.getElementById('MESSAGE');
-const MESSAGE_BUTTON = document.getElementById('MESSAGE_BUTTON');
+const messageSubject = document.getElementById('message_subject');
+const messageDescription = document.getElementById('message_description');
+const messageSentSubject = document.getElementById('message_sent_subject');
+const messageSentDescription = document.getElementById('message_sent_description');
 
-const MESSAGE_SUBJECT = document.getElementById('MESSAGE_SUBJECT');
-const MESSAGE_DESCRIPTION = document.getElementById('MESSAGE_DESCRIPTION');
-const MESSAGE_SENT_SUBJECT = document.getElementById('MESSAGE_SENT_SUBJECT');
-const MESSAGE_SENT_DESCRIPTION = document.getElementById('MESSAGE_SENT_DESCRIPTION');
-
-PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
+portfolioNavigation.addEventListener('click', (event) => {
     if(event.target.classList.contains('portfolio__button')) {
-        PORTFOLIO_NAVIGATION.querySelectorAll('button').forEach (el => el.classList.remove('active'));
-        PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
+        portfolioNavigation.querySelectorAll('button').forEach (el => el.classList.remove('active'));
+        portfolioImages.querySelectorAll('img').forEach (el => el.classList.remove('active'));
         event.target.classList.add('active')
-        let array = PORTFOLIO_IMAGES.querySelectorAll('img');    
-        PORTFOLIO_IMAGES.appendChild(array[0]);
+        let array = portfolioImages.querySelectorAll('img');    
+        portfolioImages.appendChild(array[0]);
     }
 })
 
-PORTFOLIO_IMAGES.addEventListener('click', (event) => {
+let shuffle = function (arr) {
+            
+    let i;
+    let x = arr.length;
+    let newarr = [];
+    while (x > 0) {
+        i = Math.floor(Math.random() * x) + 1;
+        newarr.push(arr[i-1]);
+        arr.splice(i-1,1);
+        x--;
+    }
+    return newarr;
+}
+
+portfolioImages.addEventListener('click', (event) => {
     let imageStatus = event.target.classList.contains('active');
-    PORTFOLIO_IMAGES.querySelectorAll('img').forEach (el => el.classList.remove('active'));
+    portfolioImages.querySelectorAll('img').forEach (el => el.classList.remove('active'));
     imageStatus ? event.target.classList.remove('active') : event.target.classList.add('active');
 })
 
-MENU.addEventListener('click', (event) => {
+menu.addEventListener('click', (event) => {
     if (event.target.classList.contains('navigation__item')) {
-        MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
+        menu.querySelectorAll('a').forEach(el => el.classList.remove('active'));
         event.target.classList.add('active');
     }
 })
 
-PHONE_VERTICAL_WRAPPER.addEventListener('click', () => {
-    PHONE_VERTICAL_SCREEN.classList.contains('display_none') ? 
-    PHONE_VERTICAL_SCREEN.classList.remove('display_none') :
-    PHONE_VERTICAL_SCREEN.classList.add('display_none');
+document.addEventListener('scroll', onScroll);
+
+function onScroll() {
+
+    let currentPosition = window.scrollY + 95;
+
+    let elements = document.querySelectorAll('body > div' );
+    
+    elements.forEach(el => {
+        if ( el.offsetTop <= currentPosition &&  el.offsetTop + el.offsetHeight > currentPosition ) {
+            let id = el.getAttribute('id');
+            menu.querySelectorAll('a').forEach(a => {
+                
+                if (a.getAttribute('href') === '#' + id) {
+                    menu.querySelectorAll('a').forEach(menuElement => menuElement.classList.remove('active'));
+                    a.classList.add('active');
+                }          
+            })
+        }   
+    });
+}
+
+// opacity: 0.5
+
+phoneVerticalWrapper.addEventListener('click', () => {
+    phoneVerticalScreen.classList.contains('display_none') ? 
+    phoneVerticalScreen.classList.remove('display_none') :
+    phoneVerticalScreen.classList.add('display_none');
 })
 
-PHONE_HORIZONTAL_WRAPPER.addEventListener('click', () => {
-    PHONE_HORIZONTAL_SCREEN.classList.contains('display_none') ? 
-    PHONE_HORIZONTAL_SCREEN.classList.remove('display_none') :
-    PHONE_HORIZONTAL_SCREEN.classList.add('display_none');
+phoneHorizontalWrapper.addEventListener('click', () => {
+    phoneHorizontalScreen.classList.contains('display_none') ? 
+    phoneHorizontalScreen.classList.remove('display_none') :
+    phoneHorizontalScreen.classList.add('display_none');
 })
 
-FORM.addEventListener('submit', (event) => {    
+form.addEventListener('submit', (event) => {    
         event.preventDefault();
         document.querySelector('html').style.overflow = 'hidden';
-        let subject = MESSAGE_SUBJECT.value;
-        let description = MESSAGE_DESCRIPTION.value;
+        let subject = messageSubject.value;
+        let description = messageDescription.value;
 
-        MESSAGE_BLOCK.classList.remove('display_none');
-        MESSAGE.classList.remove('display_none');
+        messageBlock.classList.remove('display_none');
+        messageSent.classList.remove('display_none');
 
-        MESSAGE_BLOCK.style.height = document.getElementsByTagName('html').clientHeight;
+        messageBlock.style.height = document.getElementsByTagName('html').clientHeight;
         
-        subject == '' ? MESSAGE_SENT_SUBJECT.innerHTML = '<b> Без темы </b>': MESSAGE_SENT_SUBJECT.innerHTML = '<b> Тема: </b>' + subject;
-        description == '' ? MESSAGE_SENT_DESCRIPTION.innerHTML = '<b> Без описания </b>' : MESSAGE_SENT_DESCRIPTION.innerHTML = '<b> Описание: </b>' + description;
+        subject ? messageSentSubject.innerHTML = '<b> Тема: </b>' + subject : messageSentSubject.innerHTML = '<b> Без темы </b>';
+        description ? messageSentDescription.innerHTML = '<b> Описание: </b>' + description : messageSentDescription.innerHTML = '<b> Без описания </b>';
 
-        FORM.reset();     
+        form.reset();     
 })
 
-MESSAGE_BUTTON.addEventListener('click', () => {
-    MESSAGE_BLOCK.classList.add('display_none');
-    MESSAGE.classList.add('display_none');
+messageSentButton.addEventListener('click', () => {
+    messageBlock.classList.add('display_none');
+    messageSent.classList.add('display_none');
     document.querySelector('html').style.overflow = 'auto';
     
 })
@@ -86,13 +123,11 @@ MESSAGE_BUTTON.addEventListener('click', () => {
 
 
 const carousel_slide = document.querySelector('.carousel_slide');
-const carousel_img = document.querySelectorAll('.carousel_img')
-
+const carousel_img = document.querySelectorAll('.carousel_img');
 const prev_button = document.querySelector('.prev_button');
 const next_button = document.querySelector('.next_button');
-
-let counter = 1;
 const size = carousel_img[0].clientWidth;
+let counter = 1;
 
 carousel_slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
@@ -111,21 +146,24 @@ prev_button.addEventListener('click',() => {
 })
 
 carousel_slide.addEventListener('transitionend', () => {
-    PHONE_VERTICAL_SCREEN.classList.remove('display_none');
-    PHONE_HORIZONTAL_SCREEN.classList.remove('display_none');
-    if (carousel_img[counter].id === 'LAST_CLONE') {
+    phoneVerticalScreen.classList.remove('display_none');
+    phoneHorizontalScreen.classList.remove('display_none');
+    if (carousel_img[counter].id === 'last_clone') {
         carousel_slide.style.transition = 'none';
         counter = carousel_img.length - 2;
         carousel_slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
         carousel_slide.style.stransition = 'transform 0.4s ease-in-out';
     }
 
-    if (carousel_img[counter].id === 'FIRST_CLONE') {
+    if (carousel_img[counter].id === 'first_clone') {
         carousel_slide.style.transition = 'none';
         counter = carousel_img.length - counter;
         carousel_slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
         carousel_slide.style.stransition = 'transform 0.4s ease-in-out';
     }
 })
+
+
+
 
 
