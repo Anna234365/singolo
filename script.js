@@ -81,8 +81,6 @@ function onScroll() {
     });
 }
 
-// opacity: 0.5
-
 phoneVerticalWrapper.addEventListener('click', () => {
     phoneVerticalScreen.classList.contains('display_none') ? 
     phoneVerticalScreen.classList.remove('display_none') :
