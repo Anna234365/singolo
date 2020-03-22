@@ -117,7 +117,7 @@ messageSentButton.addEventListener('click', () => {
     
 })
 
-// carousel -- SLIDER
+// carousel --- SLIDER
 
 
 const carousel_slide = document.querySelector('.slider__slides');
