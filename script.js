@@ -25,9 +25,9 @@ const messageSentDescription = document.getElementById('message_sent_description
 portfolioNavigation.addEventListener('click', (event) => {
     if(event.target.classList.contains('portfolio__button')) {
         portfolioNavigation.querySelectorAll('button').forEach (el => el.classList.remove('active'));
-        portfolioImages.querySelectorAll('img').forEach (el => el.classList.remove('active'));
+        portfolioImages.querySelectorAll('div > img').forEach (el => el.classList.remove('active'));
         event.target.classList.add('active')
-        let array = portfolioImages.querySelectorAll('img');    
+        let array = portfolioImages.querySelectorAll('div');    
         portfolioImages.appendChild(array[0]);
     }
 })
@@ -48,7 +48,7 @@ let shuffle = function (arr) {
 
 portfolioImages.addEventListener('click', (event) => {
     let imageStatus = event.target.classList.contains('active');
-    portfolioImages.querySelectorAll('img').forEach (el => el.classList.remove('active'));
+    portfolioImages.querySelectorAll('div > img').forEach (el => el.classList.remove('active'));
     imageStatus ? event.target.classList.remove('active') : event.target.classList.add('active');
 })
 
@@ -120,14 +120,25 @@ messageSentButton.addEventListener('click', () => {
 // carousel -- SLIDER
 
 
-const carousel_slide = document.querySelector('.carousel_slide');
+const carousel_slide = document.querySelector('.slider__slides');
 const carousel_img = document.querySelectorAll('.carousel_img');
-const prev_button = document.querySelector('.prev_button');
-const next_button = document.querySelector('.next_button');
-const size = carousel_img[0].clientWidth;
+const prev_button = document.querySelector('.slider__prev_button');
+const next_button = document.querySelector('.slider__next_button');
+let size = carousel_img[0].clientWidth;
+// let width = document.documentElement.clientWidth >= 1020 ? 1020 : document.documentElement.clientWidth;
 let counter = 1;
 
 carousel_slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+window.addEventListener(`resize`, () => {
+    size = document.documentElement.clientWidth >= 1020 ? 1020 : document.documentElement.clientWidth;
+    carousel_slide.style.transition = 'none';
+    carousel_slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    setTimeout(() => {
+        carousel_slide.style.transition = 'transform 0.4s ease-in-out';
+    }, 100)
+  });
+
 
 next_button.addEventListener('click',() => {
     if (counter >= carousel_img.length-1) return;
