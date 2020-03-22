@@ -876,6 +876,20 @@ body {
         margin: 12px 0px 20px 0;
     }
 
+    .inputs-and-contacts {
+        flex-direction: column;
+    }
+
+    .contact {
+        border-bottom: none;
+        padding-bottom: 30px;
+    }
+
+    .submit_button {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
     .footer__copyright {
         display: none;
     }
