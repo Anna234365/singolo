@@ -59,7 +59,6 @@ body {
 
 .header__inner {
     width: 100%;
-
     height: 100%;           
     display: flex;
     justify-content: space-between;
@@ -72,18 +71,15 @@ body {
     justify-content: space-between;
     transform: rotate(90deg);
     position: absolute;
-    left: 20px;
-    top: 26px;
+    left: 20.5px;
+    top: 23.5px;
+    z-index: 3;
 }
 
 .burger_white {
     height: 25px;
     width: 2.4px;
     background-color: white;
-}
-
-.header__burger:hover {
-    transform: none;
 }
 
 .navigation {
@@ -133,12 +129,13 @@ body {
     transition-timing-function: ease-out;
 }
 
+
 /* --------------------------- SLIDER ------------------------------------ */
 
 .slider {
     width: 100%;
     display: flex;
-    scroll-margin-top: 95px;
+    /* scroll-margin-top: 95px; */
     overflow: hidden;
 }
 
@@ -223,7 +220,7 @@ body {
 .services {
     background-color: #f2f2f2;
     border-bottom: 6px solid #ffffff;
-    scroll-margin-top: 94px;
+    /* scroll-margin-top: 95px; */
 }
 
 .services__inner {
@@ -236,6 +233,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
 
 .carousel_buttons > div {
     position: relative;
@@ -310,7 +308,7 @@ body {
 .portfolio {
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
-    scroll-margin-top: 94px;
+    /* scroll-margin-top: 95px; */
 }
 
 .portfolio__inner {
@@ -413,7 +411,7 @@ body {
 .about {
     background-color: #f2f2f2;
     border-bottom: 6px solid #ffffff;
-    scroll-margin-top: 94px;
+    /* scroll-margin-top: 95px; */
 }
 
 .about__inner {
@@ -511,7 +509,7 @@ body {
 .contact {
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
-    scroll-margin-top: 94px;
+    /* scroll-margin-top: 95px; */
 }
 
 .contact__inner {
@@ -544,7 +542,7 @@ body {
 }
 
 .inputs {
-    scroll-margin-top: 110px;
+    /* scroll-margin-top: 110px; */
     display: flex;
     flex-direction: column;
     flex: 0 1 65.9%;
@@ -625,6 +623,76 @@ body {
     color: #f0d8d9;
     transition: 0.3s;
     transition-timing-function: ease-out;
+}
+
+#message_block {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(39, 30, 30, 0.7);
+    z-index: 15;
+    display: flex;
+}
+
+#message_sent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 600px;
+    background-color: #f2f2f2;
+    border: 1px solid #2d303a;
+    border-radius: 5px;
+    position: relative;
+    margin: auto;
+    z-index: 16;
+    padding: 20px 20px;
+}
+
+.message_sent_title {
+    font-family: "Cuprum";
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d303a;
+}
+
+#message_sent_subject {
+    padding: 10px 0px;
+    color: #2d303a;
+    font-size: 1.5rem;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(95%);
+}
+
+#message_sent_description {
+    color: #2d303a;
+    font-size: 1.5rem;
+    max-height: 300px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 0px;
+    max-width: calc(95%);
+}
+
+#message_sent_button {
+    width: 40px;
+    height: 30px;
+    border: 2px solid #2d303a;
+    border-radius: 2px;
+    color: #2d303a;
+    font-family: "Lato-900";
+    font-size: 1.4rem;
+    margin: calc(5%) 0 calc(5%) 0;
+}
+
+#message_sent_button:hover {
+   cursor: pointer;
 }
 
 .contacts {
@@ -787,7 +855,7 @@ body {
         padding: 0 30px;
     }
     .header {
-        background-color: #2d303a;
+        /* background-color: #2d303a; */
         border-bottom: none;
         height: 71px;
     }
@@ -798,12 +866,28 @@ body {
 
     .carousel_buttons {
         height: 27px;
-        width: 110%;
+        width: 115%;
         margin-left: -20px;
     }
 
+    .carousel_buttons > div:hover {
+        -webkit-filter: none;
+        filter: none;
+        cursor: none;
+        transition: none;
+        transition-timing-function: none;
+    }
+
+    .carousel_buttons > div:active {
+        -webkit-filter: brightness(70%);
+        filter: brightness(70%);
+        cursor: pointer;
+        transition: 0s;
+        transition-timing-function: ease-out;
+    }
+
     .carousel_buttons > div {
-        bottom: 470%;
+        bottom: 420%;
     }
    
     .protfolio__title {
@@ -824,10 +908,56 @@ body {
         margin-right: 0 !important;
     }
 
-
     .header__burger {
         display: flex;
+        transition-duration: 0.5s;
     }
+
+    .burger__hover {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(39, 30, 30, 0.7);
+    }
+
+    .burger__modal {
+        position: absolute;
+        width: 75vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: #2d303a;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .burger__logo {
+        position: absolute;
+        top: 28px;
+        left: 75px;
+        width: 25vw;
+    }
+
+    .burger__navigation > ul {
+        margin: 170px 0 0 75px;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+    }
+
+    .burger__navigation > ul > li {
+        margin: 2rem 0 0 0;
+    }
+
+    .burger__navigation > ul > li > a {
+        font-size: 2rem;
+        font-family: "Lato-400";
+        color: white;
+    }
+
 
     .services {
         border-bottom: none;

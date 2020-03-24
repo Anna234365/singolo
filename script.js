@@ -32,53 +32,56 @@ portfolioNavigation.addEventListener('click', (event) => {
     }
 })
 
-let shuffle = function (arr) {
-            
-    let i;
-    let x = arr.length;
-    let newarr = [];
-    while (x > 0) {
-        i = Math.floor(Math.random() * x) + 1;
-        newarr.push(arr[i-1]);
-        arr.splice(i-1,1);
-        x--;
-    }
-    return newarr;
-}
-
 portfolioImages.addEventListener('click', (event) => {
     let imageStatus = event.target.classList.contains('active');
     portfolioImages.querySelectorAll('div > img').forEach (el => el.classList.remove('active'));
     imageStatus ? event.target.classList.remove('active') : event.target.classList.add('active');
 })
 
+let clickOnMenu = 'NO';
+
 menu.addEventListener('click', (event) => {
+    event.preventDefault();
+    clickOnMenu = 'YES';
     if (event.target.classList.contains('navigation__item')) {
+
+        
+        let href = event.target.getAttribute('href');
+        let targetSection = document.getElementById(href.slice(1));
+        let coordY = targetSection.offsetTop;
+        let headerHeight = document.getElementById('header').offsetHeight;
+
         menu.querySelectorAll('a').forEach(el => el.classList.remove('active'));
         event.target.classList.add('active');
+        window.scroll(1, coordY - headerHeight +1);
     }
+    setTimeout(() => clickOnMenu = 'NO', 1000);   
 })
+
+
 
 document.addEventListener('scroll', onScroll);
 
 function onScroll() {
+    if (clickOnMenu == 'NO') {
 
-    let currentPosition = window.scrollY + 95;
-
-    let elements = document.querySelectorAll('body > div' );
+        let headerHeight = document.getElementById('header').offsetHeight;
+        let currentPosition = window.scrollY + headerHeight;
+        let elements = document.querySelectorAll('body > section');
     
-    elements.forEach(el => {
-        if ( el.offsetTop <= currentPosition &&  el.offsetTop + el.offsetHeight > currentPosition ) {
-            let id = el.getAttribute('id');
-            menu.querySelectorAll('a').forEach(a => {
-                
-                if (a.getAttribute('href') === '#' + id) {
-                    menu.querySelectorAll('a').forEach(menuElement => menuElement.classList.remove('active'));
-                    a.classList.add('active');
-                }          
-            })
-        }   
-    });
+        elements.forEach(el => {
+            if ( el.offsetTop <= currentPosition &&  el.offsetTop + el.offsetHeight > currentPosition ) {
+                let id = el.getAttribute('id');
+                menu.querySelectorAll('a').forEach(a => {
+                    
+                    if (a.getAttribute('href') === '#' + id) {
+                        menu.querySelectorAll('a').forEach(menuElement => menuElement.classList.remove('active'));
+                        a.classList.add('active');
+                    }          
+                })
+            }   
+        });
+    };
 }
 
 phoneVerticalWrapper.addEventListener('click', () => {
@@ -173,6 +176,16 @@ carousel_slide.addEventListener('transitionend', () => {
 })
 
 
+const burger = document.querySelector('.header__burger');
+const burgerHover = document.querySelector('.burger__hover');
+const burgerModal = document.querySelector('.burger__modal');
+
+burger.addEventListener('click', () => {
+    burger.style.transform = 'rotate(360deg)';
+    burgerModal.classList.remove('display_none');
+    burgerHover.classList.remove('display_none');
+    document.style.overflow = 'hidden';
+})
 
 
 
