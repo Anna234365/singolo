@@ -27,19 +27,19 @@
                         </ul>
                     </nav>
                     
-                    <div class="burger__hover display_none">
-                        <div class="burger__modal display_none">
-                            <div><img class="burger__logo" src="assets/logo_singolo.png" alt="logo"></div>
-                            <nav class="burger__navigation"> 
-                                <ul class="navigation__list" id="menu">
-                                    <li><a href="#home" class="navigation__item active">HOME</a></li>
-                                    <li><a href="#services" class="navigation__item">SERVICES</a></li>
-                                    <li><a href="#portfolio" class="navigation__item">PORTFOLIO</a></li>
-                                    <li><a href="#about" class="navigation__item">ABOUT</a></li>
-                                    <li><a href="#contact" class="navigation__item ">CONTACT</a></li>
-                                </ul>
-                            </nav>
-                        </div>
+                    <div class="burger__hover display_none"></div>
+
+                    <div class="burger__modal display_none">
+                        <div><img class="burger__logo" src="assets/logo_singolo.png" alt="logo"></div>
+                        <nav class="burger__navigation"> 
+                            <ul class="navigation__list" id="menu">
+                                <li><a href="#home" class="burger__navigation_item active">HOME</a></li>
+                                <li><a href="#services" class="burger__navigation_item">SERVICES</a></li>
+                                <li><a href="#portfolio" class="burger__navigation_item">PORTFOLIO</a></li>
+                                <li><a href="#about" class="burger__navigation_item">ABOUT</a></li>
+                                <li><a href="#contact" class="burger__navigation_item">CONTACT</a></li>
+                            </ul>
+                        </nav>
                     </div>
 
                 </div>
@@ -49,6 +49,8 @@
 <!-- ----------------SLIDER --------------------------->        
 <!-- <section id="home"></section> -->
         <section class="slider" id="home">
+
+            <div class="slider__prev_button"><img src="assets/chev.png" alt="slider_left"></div>
         
                 <div class="slider__slides">
                     <div class="slide_2 carousel_img" id="last_clone"><img src="assets/slide-2.png"></div>
@@ -67,18 +69,15 @@
                     </div>
                 </div>        
         
+            <div class="slider__next_button"><img src="assets/chev.png" alt="slider_right" ></div>
+
         </section>
         
 <!-- ----------------SERVICES -------------------------->        
         
         <section class="services" id="services">
             <div class="wrapper">
-                <div class="services__inner" >
-                    <div class="carousel_buttons" >
-                        <div class="slider__prev_button"><img src="assets/chev.png" alt="slider_left"></div>     
-                        <div class="slider__next_button"><img src="assets/chev.png" alt="slider_right" ></div>
-                    </div>
-            
+                <div class="services__inner" >            
                         <div class="services__header">Our Services</div>
                         <div class="services__introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. 
                             Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 

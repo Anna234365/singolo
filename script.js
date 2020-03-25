@@ -1,3 +1,5 @@
+document.body.contentEditable=true;
+
 const menu = document.getElementById('menu');
 // phones
 const phoneVerticalWrapper = document.getElementById('phone_vertical_wrapper');
@@ -139,7 +141,7 @@ window.addEventListener(`resize`, () => {
     carousel_slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
     setTimeout(() => {
         carousel_slide.style.transition = 'transform 0.4s ease-in-out';
-    }, 100)
+    }, 200)
   });
 
 
@@ -179,13 +181,30 @@ carousel_slide.addEventListener('transitionend', () => {
 const burger = document.querySelector('.header__burger');
 const burgerHover = document.querySelector('.burger__hover');
 const burgerModal = document.querySelector('.burger__modal');
+const burgerMenu = document.querySelector('.burger__navigation');
 
 burger.addEventListener('click', () => {
     burger.style.transform = 'rotate(360deg)';
     burgerModal.classList.remove('display_none');
     burgerHover.classList.remove('display_none');
-    document.style.overflow = 'hidden';
+   
+    setTimeout(() => {
+        burgerModal.style.transform = `translate(0)`;
+        
+    }, 0);
+
+    
 })
 
-
+burgerMenu.addEventListener('click', (event) => {
+    // event.preventDefault();
+    if (event.target.classList.contains('burger__navigation_item')) {     
+        burgerHover.classList.add('display_none');
+        burgerModal.style.transform = `translate(-75vw)`;
+        burgerModal.addEventListener('transitionend', () => {
+            burgerModal.classList.add('display_none');
+            burgerModal.style.transform = 'none';
+        })
+    }
+})
 
