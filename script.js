@@ -1,4 +1,5 @@
 const menu = document.getElementById('menu');
+
 // phones
 const phoneVerticalWrapper = document.getElementById('phone_vertical_wrapper');
 const phoneVerticalScreen = document.getElementById('phone_vertical_screen');
@@ -43,22 +44,18 @@ let clickOnMenu = 'NO';
 menu.addEventListener('click', (event) => {
     event.preventDefault();
     clickOnMenu = 'YES';
-    if (event.target.classList.contains('navigation__item')) {
+    if (event.target.classList.contains('navigation__item')) { 
 
-        
-        let href = event.target.getAttribute('href');
-        let targetSection = document.getElementById(href.slice(1));
+        let hrefer = event.target.getAttribute('href');
+        let targetSection = document.getElementById(hrefer.slice(1));
         let coordY = targetSection.offsetTop;
         let headerHeight = document.getElementById('header').offsetHeight;
-
         menu.querySelectorAll('a').forEach(el => el.classList.remove('active'));
         event.target.classList.add('active');
         window.scroll(1, coordY - headerHeight +1);
     }
     setTimeout(() => clickOnMenu = 'NO', 1000);   
 })
-
-
 
 document.addEventListener('scroll', onScroll);
 
@@ -179,30 +176,39 @@ carousel_slide.addEventListener('transitionend', () => {
 const burger = document.querySelector('.header__burger');
 const burgerHover = document.querySelector('.burger__hover');
 const burgerModal = document.querySelector('.burger__modal');
-const burgerMenu = document.querySelector('.burger__navigation');
+// const burgerMenu = document.querySelector('.burger__navigation');
+const burgerMenu = document.getElementById('burger_menu');
+let burgerModalDisplay = false;
 
 burger.addEventListener('click', () => {
-    burger.style.transform = 'rotate(360deg)';
-    burgerModal.classList.remove('display_none');
-    burgerHover.classList.remove('display_none');
    
-    setTimeout(() => {
-        burgerModal.style.transform = `translate(0)`;
-        
-    }, 0);
+    if (burgerModalDisplay == true) {
+        burgerModalDisplay = false;
+        burger.style.transform = 'rotate(90deg)';
+        burgerModal.style.transform = `translate(-75vw)`;
+        burgerHover.classList.add('display_none');
 
-    
-})
+    } else {
+        burgerModalDisplay = true;  
+        burgerHover.classList.remove('display_none');
+        burger.style.transform = 'rotate(360deg)';
+        burgerModal.style.transform = `translate(0)`      
+    }    
+});
 
 burgerMenu.addEventListener('click', (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     if (event.target.classList.contains('burger__navigation_item')) {     
+        burgerModalDisplay = false;
+        burger.style.transform = 'rotate(90deg)';
         burgerHover.classList.add('display_none');
         burgerModal.style.transform = `translate(-75vw)`;
-        burgerModal.addEventListener('transitionend', () => {
-            burgerModal.classList.add('display_none');
-            burgerModal.style.transform = 'none';
-        })
+        
+        let hrefer = event.target.getAttribute('href');
+        let targetSection = document.getElementById(hrefer.slice(1));
+        let coordY = targetSection.offsetTop;
+        let headerHeight = document.getElementById('header').offsetHeight;
+      
+        window.scroll(1, coordY - headerHeight +1);
     }
 })
-

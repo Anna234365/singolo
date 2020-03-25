@@ -82,6 +82,10 @@ body {
     background-color: white;
 }
 
+.burger__modal {
+    display: none;
+}
+
 .navigation {
     height: 2.45rem;
     display: flex;
@@ -290,7 +294,7 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 0 34px 1px;
+    margin: 0 0 40px 1px;
 }
 
 .services__type {
@@ -497,9 +501,8 @@ body {
 }
 
 .employee__contacts > div {
-    flex: 1 1 23%;
+    flex: 0 1 21%;
     display: flex;
-    margin-right: 6%;
 }
 
 .employee__contacts > div:nth-child(4) {
@@ -818,6 +821,7 @@ body {
 
 @media (max-width: 1019px) {
 
+
     .slider__prev_button {
         padding-left: 30px;
     }
@@ -873,21 +877,18 @@ body {
         padding-bottom: 39px;
     }
 
-    .employee__contacts {
-        margin: 2px 0 58px 0;
+    .employee__name {
+        padding: 9px 0 2px 0;
     }
 
-    .employee__contacts > div {
-        margin: 0 8px 9px 0;
+    .employee__contacts {
+        width: 70%;
+        margin: 11px 0 69px 0;
     }
 
     .employee__text {
         height: 6.3rem;
         overflow: hidden;
-    }
-
-    .employee__contacts {
-        width: 70%;
     }
 
     .quote__title {
@@ -995,12 +996,12 @@ body {
 
     .portfolio__image {
         flex: 1 1 45%;
-        margin-right: 13px;
-        margin-bottom: 13px;
+        margin-right: 4%;
+        margin-bottom: 4%;
     }
 
     .portfolio__image:nth-child(3n) {
-        margin-right: 13px !important;
+        margin-right: 4% !important;
     }
 
     .portfolio__image:nth-child(2n) {
@@ -1027,7 +1028,7 @@ body {
 
     .burger__modal {
         position: absolute;
-        width: 75vw;
+        width: 74vw;
         height: 100vh;
         top: 0;
         left: 0;
@@ -1042,7 +1043,7 @@ body {
         position: absolute;
         top: 28px;
         left: 70px;
-        width: 25vw;
+        width: 24vw;
     }
 
     .burger__navigation > ul {
@@ -1091,6 +1092,11 @@ body {
         margin: 0 0 0 1px;
     }
 
+    .services__type{
+        padding-right: 0 !important; 
+        margin-right: 15 !important;
+    }
+
     .about {
         border-bottom: none;
     }
@@ -1101,6 +1107,11 @@ body {
 
     .about__text {
         padding: 17px 1px 27px 1px;
+    }
+
+
+    .employees {
+        padding-bottom: 13px;
     }
 
     .employee {
@@ -1117,8 +1128,8 @@ body {
     }
 
     .employee__contacts {
-        width: 50%;
-        margin: 12px 0px 24px 0;
+        width: 50% !important;
+        margin: 12px 0px 32px 0;
     }
 
     .inputs-and-contacts {
@@ -1149,7 +1160,7 @@ body {
 
     .contact {
         border-bottom: none;
-        padding-bottom: 30px;
+        padding-bottom: 37px;
     }
 
     .submit_button {
@@ -1176,5 +1187,5 @@ body {
     .footer__inner {
        justify-content: center;
     }
-    
+
 }
