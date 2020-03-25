@@ -1,5 +1,3 @@
-document.body.contentEditable=true;
-
 const menu = document.getElementById('menu');
 // phones
 const phoneVerticalWrapper = document.getElementById('phone_vertical_wrapper');
