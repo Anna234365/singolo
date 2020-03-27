@@ -86,6 +86,10 @@ body {
     display: none;
 }
 
+.burger__hover {
+    display: none;
+}
+
 .navigation {
     height: 2.45rem;
     display: flex;
@@ -239,11 +243,13 @@ body {
     margin-left: 6%;
     border-radius: 1px;
     background-position: 3.5% 54.5%;
+    overflow: hidden;
 }
 
 #phone_horizontal_screen {
     width: 73.5%;
     height: 88%;
+
     background-image: url("./assets/phone_horizontal_screen.svg");
     background-size: 180%;
     margin-top: 3%;
@@ -1019,6 +1025,7 @@ body {
     }
 
     .burger__hover {
+        display: block;
         position: absolute;
         width: 100vw;
         height: 100vh;
