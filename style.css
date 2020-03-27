@@ -243,7 +243,6 @@ body {
     margin-left: 6%;
     border-radius: 1px;
     background-position: 3.5% 54.5%;
-    overflow: hidden;
 }
 
 #phone_horizontal_screen {
@@ -1051,7 +1050,7 @@ body {
         position: absolute;
         top: 28px;
         left: 70px;
-        width: 24vw;
+        width: 120px;
     }
 
     .burger__navigation {
