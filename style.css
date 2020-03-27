@@ -984,6 +984,7 @@ body {
         font-size: 1.9rem;
         line-height: 3rem;
         padding: 20px 0 15px 0;
+        text-align: left;
     }
 
     .portfolio__button {
@@ -1046,8 +1047,15 @@ body {
         width: 24vw;
     }
 
+    .burger__navigation {
+        display: flex;
+        align-content: center;
+        height: 100vh;
+        align-items: center;
+    }
+
     .burger__navigation > ul {
-        margin: 210px 0 0 70px;
+        margin: 0 0 0 70px;
         display: flex;
         flex-direction: column;
         list-style: none;
@@ -1081,6 +1089,7 @@ body {
     .services__introduction {
         margin: 20px 0 25px 0;
         font-size: 1.9rem;
+        text-align: left;
     }
 
     .services__type {
@@ -1107,6 +1116,7 @@ body {
 
     .about__text {
         padding: 17px 1px 27px 1px;
+        text-align: left;
     }
 
 
@@ -1143,7 +1153,8 @@ body {
     .quote__text {
         font-size: 1.9rem;
         padding-bottom: 25px;
-    }
+        text-align: left;
+     }
 
     .input__row {
         margin-bottom: 12px;

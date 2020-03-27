@@ -209,6 +209,6 @@ burgerMenu.addEventListener('click', (event) => {
         let coordY = targetSection.offsetTop;
         let headerHeight = document.getElementById('header').offsetHeight;
       
-        window.scroll(1, coordY - headerHeight +1);
+        window.scroll(1, coordY - headerHeight + 2);
     }
 })
