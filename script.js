@@ -26,7 +26,6 @@ const messageSentDescription = document.getElementById('message_sent_description
 portfolioNavigation.addEventListener('click', (event) => {
     if(event.target.classList.contains('portfolio__button')) {
         portfolioNavigation.querySelectorAll('button').forEach (el => el.classList.remove('active'));
-        portfolioImages.querySelectorAll('div > img').forEach (el => el.classList.remove('active'));
         event.target.classList.add('active')
         let array = portfolioImages.querySelectorAll('div');    
         portfolioImages.appendChild(array[0]);
@@ -188,7 +187,12 @@ burger.addEventListener('click', () => {
         burgerModal.style.transform = `translate(-75vw)`;
         burgerHover.classList.add('display_none');
 
+        burgerModal.blur();
+
     } else {
+        
+        burgerModal.focus();
+        
         burgerModalDisplay = true;  
         burgerHover.classList.remove('display_none');
         burger.style.transform = 'rotate(360deg)';
@@ -211,4 +215,15 @@ burgerMenu.addEventListener('click', (event) => {
       
         window.scroll(1, coordY - headerHeight + 2);
     }
+});
+
+burgerModal.onblur = function () {
+        burgerModalDisplay = false;
+        burger.style.transform = 'rotate(90deg)';
+        burgerModal.style.transform = `translate(-75vw)`;
+        burgerHover.classList.add('display_none');
+}
+
+burgerHover.addEventListener('click', () => {
+    burgerModal.onblur();
 })
