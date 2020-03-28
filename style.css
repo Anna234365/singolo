@@ -156,7 +156,7 @@ body {
 
 .slider__prev_button > img {
     position: relative;
-    top: calc(50% - 13.5px);
+    top: calc(50% - 19px);
 }
 
 .slider__prev_button:hover {
@@ -177,7 +177,7 @@ body {
 
 .slider__next_button > img {
     position: relative;
-    top: calc(50% - 13.5px);
+    top: calc(50% - 19px);
     transform: rotate(180deg);
 }
 
@@ -321,7 +321,7 @@ body {
 
 .service__text {
     font-size: 1.2rem;
-    line-height: 2.1rem;
+    line-height: 2.2rem;
     color: #767e9e;
     font-family: "Lato-400";
     padding-top: 9px;
@@ -345,7 +345,7 @@ body {
     color: #666d89;
     font-family: "Lato-900";
     letter-spacing: -0.2px;
-    padding: 59px 0 0 0;
+    padding: 53px 0 0 0;
 }
 
 .portfolio__text {
@@ -363,7 +363,7 @@ body {
     color: #767e9e;
     font-family: "Lato-400";
     background-color: #2d303a;
-    margin: 0 7.5px 18px 0;
+    margin: 0 7.5px 19px 0;
     outline: none;
 }
     
@@ -406,7 +406,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 48px;
+    margin-bottom: 47px;
 }
 
 .portfolio__image {
@@ -502,7 +502,7 @@ body {
     display: flex;
     width: 51%;
     justify-content: space-between;
-    margin: 24px 0px 68px 0;
+    margin: 24px 0px 66px 0;
 }
 
 .employee__contacts > div {
@@ -545,7 +545,7 @@ body {
     font-family: "Lato-900";
     letter-spacing: -0.2px;
     text-indent: 0.1rem;
-    padding-top: 68px;
+    padding-top: 69px;
 }
     
 .quote__text {
@@ -737,11 +737,9 @@ body {
     color: #f0d8d9;
     font-family: "Lato-400";
     text-align: justify;
-
     letter-spacing: -0.01rem;
     word-wrap: break-word; 
-
-    padding-bottom: 24px;
+    padding-bottom: 27px;
 }
     
 .contacts__channel {
@@ -759,6 +757,7 @@ body {
     
 .contacts__details {
     font-size: 1.2rem;
+    line-height: 1.5rem;
     color: #f0d8d9;
     font-family: "Lato-400";
 }
@@ -835,6 +834,15 @@ body {
         padding-right: 30px;
     }
 
+    .slider__prev_button > img {
+        top: calc(50% - 15px);
+    }
+
+    .slider__next_button > img {
+        top: calc(50% - 15px);
+    }
+
+
     .services__header {
         padding-top: 39px;
     }
@@ -844,19 +852,19 @@ body {
     }
 
     .services__type {
-        flex: 0 1 49%;
+        flex: 0 1 48.5%;
         padding-right: 34px;
-        margin-bottom: 50px;
+        margin-bottom: 47px;
     }
 
     .services__description {
-        margin-bottom: 21px;
+        margin-bottom: 24px;
     }
 
     .portfolio__text {
-        padding: 17px 0 11px 0;
+        padding: 17px 0 12px 0;
         font-size: 1.9rem;
-        line-height: 3rem;
+        line-height: 3.1rem;
     }
 
     .portfolio__button {
@@ -876,7 +884,7 @@ body {
     }
 
     .about__title {
-        padding-top: 51px;
+        padding-top: 52px;
     }
     .about__text {
         padding-bottom: 39px;
@@ -888,7 +896,7 @@ body {
 
     .employee__contacts {
         width: 70%;
-        margin: 11px 0 69px 0;
+        margin: 11px 0 68px 0;
     }
 
     .employee__text {
@@ -916,8 +924,14 @@ body {
         margin-bottom: 39px;
     }
 
+    .contacts__title {
+        padding-bottom: 3px;
+    }
+
     .contacts__text {
         font-family: "Lato-300";
+        letter-spacing: 0;
+        padding-bottom: 13px;
     }
 
     .contacts__details {
@@ -933,6 +947,16 @@ body {
 
     .slider__prev_button {
         padding-left: 10px;
+    }
+
+    .slider__prev_button > img {
+        position: relative;
+        top: calc(50% - 13px);
+    }
+
+    .slider__next_button > img {
+        position: relative;
+        top: calc(50% - 13px);
     }
 
     .slider__next_button {
@@ -1109,7 +1133,7 @@ body {
 
     .services__type{
         padding-right: 0 !important; 
-        margin-right: 15 !important;
+        margin: 0 10px 22px 0;
     }
 
     .about {
