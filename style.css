@@ -1102,7 +1102,7 @@ body {
         text-decoration: none;
     }
 
-    .burger__navigation > ul > li > a.active {
+    .burger__navigation_item.active {
         color: #f06c64;
         transition: 0.3s;
         transition-timing-function: ease-out;

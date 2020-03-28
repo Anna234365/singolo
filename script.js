@@ -74,7 +74,14 @@ function onScroll() {
                         menu.querySelectorAll('a').forEach(menuElement => menuElement.classList.remove('active'));
                         a.classList.add('active');
                     }          
-                })
+                });
+                burgerMenu.querySelectorAll('a').forEach(a => {
+                    
+                    if (a.getAttribute('href') === '#' + id) {
+                        burgerMenu.querySelectorAll('a').forEach(menuElement => menuElement.classList.remove('active'));
+                        a.classList.add('active');
+                    }          
+                });
             }   
         });
     };
@@ -124,7 +131,6 @@ const carousel_img = document.querySelectorAll('.carousel_img');
 const prev_button = document.querySelector('.slider__prev_button');
 const next_button = document.querySelector('.slider__next_button');
 let size = carousel_img[0].clientWidth;
-// let width = document.documentElement.clientWidth >= 1020 ? 1020 : document.documentElement.clientWidth;
 let counter = 1;
 
 carousel_slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
@@ -175,7 +181,6 @@ carousel_slide.addEventListener('transitionend', () => {
 const burger = document.querySelector('.header__burger');
 const burgerHover = document.querySelector('.burger__hover');
 const burgerModal = document.querySelector('.burger__modal');
-// const burgerMenu = document.querySelector('.burger__navigation');
 const burgerMenu = document.getElementById('burger_menu');
 let burgerModalDisplay = false;
 
@@ -202,6 +207,7 @@ burger.addEventListener('click', () => {
 
 burgerMenu.addEventListener('click', (event) => {
     event.preventDefault();
+    clickOnMenu = 'YES'; 
     if (event.target.classList.contains('burger__navigation_item')) {     
         burgerModalDisplay = false;
         burger.style.transform = 'rotate(90deg)';
@@ -213,8 +219,12 @@ burgerMenu.addEventListener('click', (event) => {
         let coordY = targetSection.offsetTop;
         let headerHeight = document.getElementById('header').offsetHeight;
       
+        burgerMenu.querySelectorAll('a').forEach(el => el.classList.remove('active'));
+        event.target.classList.add('active');
+
         window.scroll(1, coordY - headerHeight + 2);
     }
+    setTimeout(() => clickOnMenu = 'NO', 1000); 
 });
 
 burgerModal.onblur = function () {
