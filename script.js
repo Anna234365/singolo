@@ -130,10 +130,15 @@ const carousel_slide = document.querySelector('.slider__slides');
 const carousel_img = document.querySelectorAll('.carousel_img');
 const prev_button = document.querySelector('.slider__prev_button');
 const next_button = document.querySelector('.slider__next_button');
-let size = carousel_img[0].clientWidth;
-let counter = 1;
 
-carousel_slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+let size;
+let counter;
+
+window.onload = function() {
+    size = carousel_img[0].clientWidth;
+    counter = 1;
+    carousel_slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+}
 
 window.addEventListener(`resize`, () => {
     size = document.documentElement.clientWidth >= 1020 ? 1020 : document.documentElement.clientWidth;
